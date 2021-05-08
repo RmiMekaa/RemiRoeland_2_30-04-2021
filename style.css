@@ -11,7 +11,11 @@
 }
 
 body {
+    position: relative; /* Pour le positionnement du logo sur les très grande résolutions */
     font-family: "Raleway";
+    max-width: 1980px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 ul {
@@ -85,7 +89,7 @@ nav ul li:hover > a {
 }
 
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 700px) {
 
     nav {
         margin-bottom: 0;
@@ -124,7 +128,6 @@ nav ul li:hover > a {
     
 }
 
-
 /* Section recherche */
 .searchSection {
     padding-left: 20px;
@@ -137,6 +140,7 @@ nav ul li:hover > a {
 
 /* Barre de recherche */
 .searchBar {
+    max-width: 400px;
     height: 50px;
     margin-top: 2em;
     margin-bottom: 2em;
@@ -154,8 +158,7 @@ nav ul li:hover > a {
 }
 
 .searchInput {
-    width: calc(100% - 100px);
-    max-width: 230px;
+    width: calc(100% - 100px); /* 100% moins taille des deux éléments qui l'entourent */
     padding: 1em;
     border: 2px solid #f2f2f2;
     font-size: 16px;
@@ -178,8 +181,16 @@ nav ul li:hover > a {
     display: none; /* On enlève l'affichage du mot "rechercher" pour les petites dimensions */
 }
 
-@media all and (min-width: 600px) {
+@media all and (min-width: 700px) {
 
+    .searchInput {
+        width: calc(100% - 182px);
+        padding: 1em;
+        border: 2px solid #f2f2f2;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
     .searchButton {
         width: 132px;
         padding-left: 15px;
@@ -264,19 +275,20 @@ nav ul li:hover > a {
     color: #0065FC;
 }
 
-/* Règles partagées entre les sections populaire et hébergements */
-.mostPopularSection, .accommodationsSection {
+/* Règles partagées entre les sections */
+.mostPopularSection, .accommodationsSection, .activitiesSection {
     padding: 30px 20px;
 }
 
-.mostPopularSection__header, .accommodationsSection__header {
+.header {
     margin-bottom: 20px;
 }
 
-.mostPopularSection__cardsWrapper, .accommodationsSection__cardsWrapper {
+.cardsWrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-around;
+    row-gap: 20px;
 }
 
 /* Règles spécifiques à la section "Les plus populaires" */
@@ -284,45 +296,50 @@ nav ul li:hover > a {
     background-color: #f2f2f2;
 }
 
-.mostPopularSection__header {
+.mostPopularSection .header {
     display: flex;
     justify-content: space-between;
 }
 
-.mostPopularSection__header .icon {
+.mostPopularSection .header .icon {
     position: relative; /* Correction de l'alignement de l'îcone avec le titre */
     top: 3px;
 }
 
-.mostPopularSection .card {
-    height: 145px;
-}
+@media all and (min-width: 700px) {
 
-.mostPopularSection .card__label {
-    justify-content: space-between;
-}
+    .resultsContainer {
+        margin-left: 20px;
+        margin-right: 20px;
+        display: flex;
+        gap: 30px;
+        flex-direction: row-reverse;
+    }
 
-.mostPopularSection .card__label h3 {
-    margin-bottom: 5px;
-}
+    .mostPopularSection {
+        min-width: 335px;
+        border-radius: 20px;
+        flex: 1;
+    }
 
-.mostPopularSection a:hover {
-    border-radius: 15px;
-    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.200);
+    .accommodationsSection {
+        border-radius: 20px;
+        flex: 2;
+        background-color: #f2f2f2;
+    }
 }
 
 /* Cartes */
 .card {
-    width: 335px;
     display: flex;
     padding: 5px;
     background-color: white;
     border-radius: 15px;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.200);
 }
 
 .card__thumb {
-    width: 127px;
-    height: 100%;
+    flex: 1.5;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     overflow: hidden;
@@ -335,9 +352,9 @@ nav ul li:hover > a {
 }
 
 .card__label {
-    width: calc(100% - 127px); /* 100% moins la taille de l'image */
     padding: 15px 15px 15px 20px;
     display: flex;
+    flex: 2;
     flex-direction: column;
 }
 
@@ -350,28 +367,111 @@ nav ul li:hover > a {
     color: #d9d9d9;
 }
 
-/* Règles spécifiques à la section hébergement */
+.card:hover {
+    border-radius: 15px;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.400);
+}
 
+.card:hover h3 {
+    color: #0065FC;
+}
+
+/* Cartes section les plus populaires */
+.mostPopularSection .card {
+    height: 145px;
+}
+
+.mostPopularSection .card__label {
+    justify-content: space-between;
+}
+
+.mostPopularSection .card__label h3 {
+    margin-bottom: 5px;
+}
+
+/* Cartes section hébergement */
 .accommodationsSection .card {
-    height: 200px;
+    height: 220px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.200);
 }
 
 .accommodationsSection .card__thumb {
-    height: 115px;
-    width: 100%;
+    flex: 2;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 0px;
 }
 
 .accommodationsSection .card__label {
-    height: calc(100% - 115px);
-    width: 100%;
+    flex: 1;
     padding: 5px 10px;
     justify-content: space-evenly;
 }
+
+@media all and (min-width: 700px) {
+
+    .accommodationsSection .card {
+        max-width: 335px;
+    }
+}
+
+/* Section Activités */
+
+.activitiesSection .card {
+    height: 230px;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+}
+
+.activitiesSection .card__thumb {
+    height: calc(100% - 50px);
+    flex: inherit;
+    border-bottom-left-radius: 0;;
+}
+
+.activitiesSection .card__label {
+    height: 50px;
+    flex: inherit;
+}
+
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2;
+    gap: 40px;
+    padding: 50px;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer ul li a:hover {
+    color: #0065FC;
+}
+
+@media all and (min-width: 700px) {
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+
+
 
 
 
