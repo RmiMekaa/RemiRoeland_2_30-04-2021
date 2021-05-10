@@ -3,7 +3,7 @@
     src: url(/Ressources/fonts/Raleway-VariableFont_wght.ttf);
 }
 
-/* Règles générales */
+/* --------------------------------------- Règles générales ---------------------------------------*/
 * {
     padding: 0;
     margin: 0;
@@ -33,17 +33,20 @@ img {
 
 
 /* Règles pour les titres */
+
+h2, h3 {
+    font-weight: 600;
+}
+
 h2 {
     font-size: 18px;
-    font-weight: 600;
 }
 
 h3 {
     font-size: 16px;
-    font-weight: 600;
 }
 
-/* Header */
+/* ------------------------------------------ Header ------------------------------------------ */
 nav {
     padding-top: 15px;
     margin-bottom: 20px;
@@ -89,7 +92,7 @@ nav ul li:hover > a {
 }
 
 
-@media all and (min-width: 700px) {
+@media all and (min-width: 750px) {
 
     nav {
         margin-bottom: 0;
@@ -100,7 +103,7 @@ nav ul li:hover > a {
 
     nav img {
         position: absolute; /* Fixation du logo */
-        left: 0;
+        left: 50px;
         top: 15px;
     }
 
@@ -128,7 +131,8 @@ nav ul li:hover > a {
     
 }
 
-/* Section recherche */
+/*--------------------------------------- Section recherche ---------------------------------------*/
+
 .searchSection {
     padding-left: 20px;
     padding-right: 20px;
@@ -181,7 +185,7 @@ nav ul li:hover > a {
     display: none; /* On enlève l'affichage du mot "rechercher" pour les petites dimensions */
 }
 
-@media all and (min-width: 700px) {
+@media all and (min-width: 750px) {
 
     .searchInput {
         width: calc(100% - 182px);
@@ -275,20 +279,36 @@ nav ul li:hover > a {
     color: #0065FC;
 }
 
+@media all and (min-width: 750px) {
+
+    .searchSection {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+/*--------------------------------------- Section Principale ---------------------------------------*/
+
+.resultsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
 /* Règles partagées entre les sections */
 .mostPopularSection, .accommodationsSection, .activitiesSection {
     padding: 30px 20px;
 }
 
-.header {
-    margin-bottom: 20px;
+.heading {
+    margin-bottom: 25px;
 }
 
 .cardsWrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    row-gap: 20px;
+    gap: 20px;
 }
 
 /* Règles spécifiques à la section "Les plus populaires" */
@@ -296,40 +316,76 @@ nav ul li:hover > a {
     background-color: #f2f2f2;
 }
 
-.mostPopularSection .header {
+.mostPopularSection .heading {
     display: flex;
     justify-content: space-between;
 }
 
-.mostPopularSection .header .icon {
+.mostPopularSection .heading .icon {
     position: relative; /* Correction de l'alignement de l'îcone avec le titre */
     top: 3px;
 }
 
-@media all and (min-width: 700px) {
+/* Règles spécifiques à la section "Activités" */
 
+.column2, .column4 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Media Queries */
+
+@media all and (min-width: 750px) {
     .resultsContainer {
-        margin-left: 20px;
-        margin-right: 20px;
-        display: flex;
-        gap: 30px;
-        flex-direction: row-reverse;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 50px;
+        margin-right: 50px;
     }
 
     .mostPopularSection {
-        min-width: 335px;
         border-radius: 20px;
+        order: 2;
         flex: 1;
     }
 
     .accommodationsSection {
         border-radius: 20px;
-        flex: 2;
+        flex: 1;
         background-color: #f2f2f2;
+    }
+
+    .activitiesSection {
+        order: 3;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .activitiesSection .cardsWrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 25px;
+    }
+
+    .activitiesSection .card {
+        max-width: 300px;
     }
 }
 
-/* Cartes */
+@media all and (min-width: 1200px) {
+    .mostPopularSection {
+        flex: 1.5;
+    }
+
+    .accommodationsSection {
+        flex: 3;
+    }
+}
+/* ----------------------------------------- Cartes ------------------------------------------------*/
+
 .card {
     display: flex;
     padding: 5px;
@@ -408,14 +464,14 @@ nav ul li:hover > a {
     justify-content: space-evenly;
 }
 
-@media all and (min-width: 700px) {
+@media all and (min-width: 750px) {
 
     .accommodationsSection .card {
-        max-width: 335px;
+        max-width: 300px;
     }
 }
 
-/* Section Activités */
+/* Cartes section Activités */
 
 .activitiesSection .card {
     height: 230px;
@@ -435,8 +491,13 @@ nav ul li:hover > a {
     flex: inherit;
 }
 
+@media all and (min-width: 750px) {
+    .column1 .card, .column3 .card {
+        height: 100%;
+}
 
-/* Footer */
+
+/*---------------------------------------------- Footer ----------------------------------------------*/
 
 footer {
     display: flex;
@@ -462,14 +523,13 @@ footer ul li a:hover {
     color: #0065FC;
 }
 
-@media all and (min-width: 700px) {
+@media all and (min-width: 750px) {
 
     footer {
         flex-direction: row;
         justify-content: space-around;
     }
 }
-
 
 
 

@@ -17,7 +17,7 @@
                 <a href=""><img src="/Ressources/images/logo/Reservia.svg" alt="logo"></a>
                 <li class="subscribe"><a href="">S'inscrire</a></li>            
                 <li class="accommodationsLink"><a href="#accommodationsSection">Hébergements</a></li>
-                <li class="activitiesLink"><a href="">Activités</a></li>
+                <li class="activitiesLink"><a href="#activitiesSection">Activités</a></li>
             </ul>
         </nav>
     </header>
@@ -58,9 +58,9 @@
             </div>
         </section>
 
-        <section class="resultsContainer">
-            <div class="mostPopularSection">
-                <div class="header">
+        <article class="resultsContainer">
+            <aside class="mostPopularSection">
+                <div class="heading">
                     <h2>Les plus populaires</h2>
                     <i class="icon fas fa-chart-line"></i>
                 </div>
@@ -126,11 +126,10 @@
                         </div>
                     </a>
                 </div>
-            </div>
-            <div id="accommodationsSection" class="accommodationsSection">
-                <div class="header">
-                    <h2>Hébergements</h2>
-                </div>
+            </aside>
+
+            <section id="accommodationsSection" class="accommodationsSection">
+                <h2 class="heading">Hébergements</h2>
                 <div class="cardsWrapper">
                     <a href="#">
                         <div class="card">
@@ -241,74 +240,82 @@
                         </div>
                     </a>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="activitiesSection" class="activitiesSection">
-            <h3 class="header">Activités à Marseille</h3>
-            <div class="cardsWrapper">
-                <a href="#">
-                    <div class="card">
-                        <div class="card__thumb">
-                            <img src="/Ressources/images/activites/4_small/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" alt="">
-                        </div>
-                        <div class="card__label">
-                            <h3>Vieux Port</h3>
-                        </div>
+            <section id="activitiesSection" class="activitiesSection">
+                <h2 class="heading">Activités à Marseille</h2>
+                <div class="cardsWrapper">
+                    <div class="column1">
+                        <a href="#">
+                            <div class="card">
+                                <div class="card__thumb">
+                                    <img src="/Ressources/images/activites/4_small/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" alt="">
+                                </div>
+                                <div class="card__label">
+                                    <h3>Vieux Port</h3>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="card">
-                        <div class="card__thumb">
-                            <img src="/Ressources/images/activites/4_small/paul-hermann-QFTrLdQIRhI-unsplash.jpg" alt="">
-                        </div>
-                        <div class="card__label">
-                            <h3>Fort de Pornègues</h3>
-                        </div>
+                    <div class="column2">
+                        <a href="#">
+                            <div class="card">
+                                <div class="card__thumb">
+                                    <img src="/Ressources/images/activites/4_small/paul-hermann-QFTrLdQIRhI-unsplash.jpg" alt="">
+                                </div>
+                                <div class="card__label">
+                                    <h3>Fort de Pornègues</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card">
+                                <div class="card__thumb">
+                                    <img src="/Ressources/images/activites/4_small/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="">
+                                </div>
+                                <div class="card__label">
+                                    <h3>Îles du Frioul</h3>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="card">
-                        <div class="card__thumb">
-                            <img src="/Ressources/images/activites/4_small/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="">
-                        </div>
-                        <div class="card__label">
-                            <h3>Îles du Frioul</h3>
-                        </div>
+                    <div class="column3">
+                        <a href="#">
+                            <div class="card">
+                                <div class="card__thumb">
+                                    <img src="/Ressources/images/activites/4_small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" alt="">
+                                </div>
+                                <div class="card__label">
+                                    <h3>Parc National des Calanques </h3>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="card">
-                        <div class="card__thumb">
-                            <img src="/Ressources/images/activites/4_small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" alt="">
-                        </div>
-                        <div class="card__label">
-                            <h3>Parc National des Calanques </h3>
-                        </div>
+                    <div class="column4">
+                        <a href="#">
+                            <div class="card">
+                                <div class="card__thumb">
+                                    <img src="/Ressources/images/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="">
+                                </div>
+                                <div class="card__label">
+                                    <h3>Notre-Dame-de-la-Garde</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="card">
+                                <div class="card__thumb">
+                                    <img src="/Ressources/images/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg" alt="">
+                                </div>
+                                <div class="card__label">
+                                    <h3>Parc Longchamp</h3>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="card">
-                        <div class="card__thumb">
-                            <img src="/Ressources/images/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="">
-                        </div>
-                        <div class="card__label">
-                            <h3>Notre-Dame-de-la-Garde</h3>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="card">
-                        <div class="card__thumb">
-                            <img src="/Ressources/images/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg" alt="">
-                        </div>
-                        <div class="card__label">
-                            <h3>Parc Longchamp</h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </section>
+                </div>
+            </section>
+        </article>
     </main>
 
     <footer>
