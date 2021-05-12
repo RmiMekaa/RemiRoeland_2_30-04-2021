@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     position: relative; /* Pour le positionnement du logo sur les très grande résolutions */
     font-family: "Raleway";
@@ -47,6 +51,7 @@ h3 {
 }
 
 /* ------------------------------------------ Header ------------------------------------------ */
+
 nav {
     padding-top: 15px;
     margin-bottom: 20px;
@@ -59,6 +64,7 @@ nav img {
 }
 
 nav ul {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -92,7 +98,7 @@ nav ul li:hover > a {
 }
 
 
-@media all and (min-width: 750px) {
+@media all and (min-width: 768px) {
 
     nav {
         margin-bottom: 0;
@@ -107,6 +113,9 @@ nav ul li:hover > a {
         top: 15px;
     }
 
+    nav ul {
+        justify-content: flex-end;
+    }
     nav ul li {
         width: auto;
         padding: 30px;
@@ -181,11 +190,15 @@ nav ul li:hover > a {
     font-weight: 600;
 }
 
+.searchButton:hover {
+    background-color: #0065fcec;
+}
+
 .searchButton span {
     display: none; /* On enlève l'affichage du mot "rechercher" pour les petites dimensions */
 }
 
-@media all and (min-width: 750px) {
+@media all and (min-width: 768px) {
 
     .searchInput {
         width: calc(100% - 182px);
@@ -279,7 +292,7 @@ nav ul li:hover > a {
     color: #0065FC;
 }
 
-@media all and (min-width: 750px) {
+@media all and (min-width: 768px) {
 
     .searchSection {
         margin-left: 50px;
@@ -292,7 +305,7 @@ nav ul li:hover > a {
 .resultsContainer {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 43px;
 }
 
 /* Règles partagées entre les sections */
@@ -311,6 +324,10 @@ nav ul li:hover > a {
     gap: 20px;
 }
 
+.seeMore {
+    margin-top: 25px;
+    font-weight: 600;
+}
 /* Règles spécifiques à la section "Les plus populaires" */
 .mostPopularSection {
     background-color: #f2f2f2;
@@ -326,17 +343,10 @@ nav ul li:hover > a {
     top: 3px;
 }
 
-/* Règles spécifiques à la section "Activités" */
-
-.column2, .column4 {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
 
 /* Media Queries */
 
-@media all and (min-width: 750px) {
+@media all and (min-width: 768px) {
     .resultsContainer {
         flex-direction: row;
         flex-wrap: wrap;
@@ -354,24 +364,6 @@ nav ul li:hover > a {
         border-radius: 20px;
         flex: 1;
         background-color: #f2f2f2;
-    }
-
-    .activitiesSection {
-        order: 3;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .activitiesSection .cardsWrapper {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 25px;
-    }
-
-    .activitiesSection .card {
-        max-width: 300px;
     }
 }
 
@@ -414,15 +406,6 @@ nav ul li:hover > a {
     flex-direction: column;
 }
 
-.stars {
-    color: #0065FC;
-    letter-spacing: -1px;
-}
-
-.emptyStar {
-    color: #d9d9d9;
-}
-
 .card:hover {
     border-radius: 15px;
     box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.400);
@@ -430,6 +413,37 @@ nav ul li:hover > a {
 
 .card:hover h3 {
     color: #0065FC;
+}
+
+/* Étoiles */
+aside.stars {
+    font-family: 'Font Awesome 5 Free';
+    font-weight:bold;
+}
+
+aside.stars::before  {
+    color:#0065FC;
+}
+aside.stars::after {
+    color: #d9d9d9;
+}
+aside.threeStars::before {
+    content:"\f005\f005\f005";
+}
+
+aside.threeStars::after {
+    content:"\f005\f005";
+}
+
+aside.fourStars::before {
+    content:"\f005\f005\f005\f005";
+}
+aside.fourStars::after {
+    content:"\f005";
+}
+
+aside.fiveStars::before {
+    content:"\f005\f005\f005\f005\f005";
 }
 
 /* Cartes section les plus populaires */
@@ -464,36 +478,105 @@ nav ul li:hover > a {
     justify-content: space-evenly;
 }
 
-@media all and (min-width: 750px) {
+@media all and (min-width: 768px) {
 
     .accommodationsSection .card {
         max-width: 300px;
     }
 }
 
-/* Cartes section Activités */
+/*--------------------------------------------------------- Activités ---------------------------------------------------------*/
 
-.activitiesSection .card {
-    height: 230px;
-    flex-direction: column;
-    padding: 0;
+.activitiesSection h2 {
+    margin-bottom: 2rem;
+}
+
+.activitiesSection article {
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.200);
+    border-radius: 1rem;
     overflow: hidden;
+    margin-bottom: 22px;
 }
 
-.activitiesSection .card__thumb {
-    height: calc(100% - 50px);
-    flex: inherit;
-    border-bottom-left-radius: 0;;
+.activitiesSection img {
+    width: 100%;
+    height: 135px;
+    object-fit: cover;
 }
 
-.activitiesSection .card__label {
-    height: 50px;
-    flex: inherit;
+.activitiesSection h3 {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
 }
 
-@media all and (min-width: 750px) {
-    .column1 .card, .column3 .card {
+@media all and (min-width: 768px) {
+
+    .activitiesSection {
+        order: 3;
+        display: grid;
+        grid-column-gap: 43px;
+        grid-template-areas: "titre titre"
+                             "activité1 activité2"
+                             "activité3 activité4"
+                             "activité5 activité6";
+    }
+
+    .activitiesSection h2 {
+        grid-area: titre;
+    }
+
+    .activitiesSection article:first-of-type {
+        grid-area: activité1;
+    }
+
+    .activitiesSection article:nth-of-type(2) {
+        grid-area: activité2;
+    }
+
+    .activitiesSection article:nth-of-type(3) {
+        grid-area: activité3;
+    }
+
+    .activitiesSection article:nth-of-type(4) {
+        grid-area: activité4;
+    }
+
+    .activitiesSection article:nth-of-type(5) {
+        grid-area: activité5;
+    }
+
+    .activitiesSection article:last-of-type {
+        grid-area: activité6;
+    }
+
+    .activitiesSection article {
+        margin-bottom: 43px;
+    }
+}
+
+@media all and (min-width: 1024px) {
+
+    .activitiesSection {
+        order: 3;
+        display: grid;
+        grid-column-gap: 43px;
+        grid-template-areas: "titre titre titre titre"
+                             "activité1 activité2 activité4 activité5"
+                             "activité1 activité2 activité4     .    "
+                             "activité1     .     activité4 activité6"
+                             "activité1 activité3 activité4 activité6";
+        grid-template-rows: auto 180px 43px 43px 180px;
+    }
+
+    .activitiesSection article {
         height: 100%;
+    }
+
+    .activitiesSection article img {
+        height: calc(100% - 55px);
+    }
 }
 
 
@@ -523,21 +606,10 @@ footer ul li a:hover {
     color: #0065FC;
 }
 
-@media all and (min-width: 750px) {
+@media all and (min-width: 768px) {
 
     footer {
         flex-direction: row;
         justify-content: space-around;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
