@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
-
 </head>
 
 <body>
@@ -32,42 +31,26 @@
             <p>En plein centre ville ou en pleine nature</p>
             <div class="searchBar">
                 <div class="iconDiv"><i class="icon fas fa-map-marker-alt"></i></div>
-                <input class="searchInput" type="text" placeholder="Ville, Pays...">
-                <button class="searchButton" type="submit"><i
-                        class="icon fas fa-search"></i><span>Rechercher</span></button>
+                <input type="text" placeholder="Ville, Pays...">
+                <button type="submit">
+                    <i class="icon fas fa-search"></i>
+                    <span>Rechercher</span>
+                </button>
             </div>
-            <div class="filterSection">
-                <span class="filterSection__title">Filtres</span>
-                <div class="filter">
-                    <div class="filter__icon"><i class="fas fa-money-bill-wave"></i></div>
-                    <span class="filter__name">Économique</span>
-                </div>
-                <div class="filter">
-                    <div class="filter__icon"><i class="fas fa-child"></i></div>
-                    <span class="filter__name">Familial</span>
-                </div>
-                <div class="filter">
-                    <div class="filter__icon"><i class="fas fa-heart"></i></div>
-                    <span class="filter__name">Romantique</span>
-                </div>
-                <div class="filter">
-                    <div class="filter__icon"><i class="fas fa-dog"></i></div>
-                    <span class="filter__name">Animaux autorisés</span>
-                </div>
-                <div class="filterSection__info">
-                    <div class="infoIcon">
-                        <i class="fas fa-info"></i>
-                    </div>
-                    <span class="infoText">Plus de 500 logements sont disponibles dans cette ville</span>
-                </div>
-            </div>
+
+            <section id="filtersSection">
+                <h4>Filtres</h4>
+                <button onclick="">Économique</button>
+                <button onclick="">Familial</button>
+                <button onclick="">Romantique</button>
+                <button onclick="">Animaux autorisés</button>
+                <p>Plus de 500 logements sont disponibles dans cette ville</p>
+            </section>
         </section>
 
-        <article id="searchResultsSection">
-            
+        <article id="searchResultsSection">           
             <aside id="mostPopularSection">
                 <h2>Les plus populaires</h2>
-                <aside class="icon"></aside>
                 <article class="card" onclick="">
                     <img src="/Ressources/images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="">
                     <h3>Hôtel Le soleil du matin</h3>
@@ -90,75 +73,45 @@
 
             <section id="accommodationsSection">
                 <h2 class="heading">Hébergements</h2>
-                <div class="cardsWrapper">
-                    <article class="card">
-                        <div class="card__thumb">
-                            <img src="/Ressources/images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg"
-                                alt="">
-                        </div>
-                        <div class="card__label">
-                            <h3>Auberge la Cannebière</h3>
-                            <p>Nuit à partir de <strong>25€</strong></p>
-                            <aside class="stars fourStars"></aside>
-                        </div>
+                <div class="wrapper">
+                    <article class="card" onclick="">
+                        <img src="/Ressources/images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="">
+                        <h3>Auberge la Cannebière</h3>
+                        <p>Nuit à partir de <strong>25€</strong></p>
+                        <aside class="stars fourStars"></aside>
                     </article>
-                    <article class="card">
-                        <div class="card__thumb">
-                            <img src="/Ressources/images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg"
-                                alt="">
-                        </div>
-                        <div class="card__label">
-                            <h3>Hôtel du port</h3>
-                            <p>Nuit à partir de <strong>71€</strong></p>
-                            <aside class="stars fiveStars"></aside>
-                        </div>
+                    <article class="card" onclick="">
+                        <img src="/Ressources/images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg" alt="">
+                        <h3>Hôtel du port</h3>
+                        <p>Nuit à partir de <strong>71€</strong></p>
+                        <aside class="stars fiveStars"></aside>
                     </article>
-                    <article class="card">
-                        <div class="card__thumb">
-                            <img src="/Ressources/images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg"
-                                alt="">
-                        </div>
-                        <div class="card__label">
-                            <h3>Hôtel Les mouettes</h3>
-                            <p>Nuit à partir de <strong>76€</strong></p>
-                            <aside class="stars fourStars"></aside>
-                        </div>
+                    <article class="card" onclick="">
+                        <img src="/Ressources/images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg" alt="">
+                        <h3>Hôtel Les mouettes</h3>
+                        <p>Nuit à partir de <strong>76€</strong></p>
+                        <aside class="stars fourStars"></aside>
                     </article>
-                    <article class="card">
-                        <div class="card__thumb">
-                            <img src="/Ressources/images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg"
-                                alt="">
-                        </div>
-                        <div class="card__label">
-                            <h3>Hôtel de la mer</h3>
-                            <p>Nuit à partir de <strong>46€</strong></p>
-                            <aside class="stars threeStars"></aside>
-                        </div>
+                    <article class="card" onclick="">
+                        <img src="/Ressources/images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="">
+                        <h3>Hôtel de la mer</h3>
+                        <p>Nuit à partir de <strong>46€</strong></p>
+                        <aside class="stars threeStars"></aside>
                     </article>
-                    <article class="card">
-                        <div class="card__thumb">
-                            <img src="/Ressources/images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg"
-                                alt="">
-                        </div>
-                        <div class="card__label">
-                            <h3>Auberge Le Panier</h3>
-                            <p>Nuit à partir de <strong>23€</strong></p>
-                            <aside class="stars fourStars"></aside>
-                        </div>
+                    <article class="card" onclick="">
+                        <img src="/Ressources/images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg" alt="">
+                        <h3>Auberge Le Panier</h3>
+                        <p>Nuit à partir de <strong>23€</strong></p>
+                        <aside class="stars fourStars"></aside>
                     </article>
-                    <article class="card">
-                        <div class="card__thumb">
-                            <img src="/Ressources/images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg"
-                                alt="">
-                        </div>
-                        <div class="card__label">
-                            <h3>Hôtel chez Amina</h3>
-                            <p>Nuit à partir de <strong>96€</strong></p>
-                            <aside class="stars fiveStars"></aside>
-                        </div>
+                    <article class="card" onclick="">
+                        <img src="/Ressources/images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" alt="">
+                        <h3>Hôtel chez Amina</h3>
+                        <p>Nuit à partir de <strong>96€</strong></p>
+                        <aside class="stars fiveStars"></aside>
                     </article>
+                    <p class="seeMore" onclick="">Afficher plus</p>
                 </div>
-                <p class="seeMore">Afficher plus</p>
             </section>
 
             <section id="activitiesSection">
@@ -188,33 +141,35 @@
                     <h3>Parc Longchamp</h3>
                 </article>
             </section>
-
         </article>
     </main>
 
+</section>
+
+
     <footer>
-        <div>
+        <section>
             <h3>À Propos</h3>
             <ul>
                 <li><a href="">Fonctionnement du site</a></li>
                 <li><a href="">Conditions générales de vente</a></li>
                 <li><a href="">Données et confidentialités</a></li>
             </ul>
-        </div>
-        <div>
+        </section>
+        <section>
             <h3>Nos hébergements</h3>
             <ul>
                 <li><a href="">Chartre qualité</a></li>
                 <li><a href="">Soumettre votre hôtel</a></li>
             </ul>
-        </div>
-        <div>
+        </section>
+        <section>
             <h3>Assistance</h3>
             <ul>
                 <li><a href="">Centre d'aide</a></li>
                 <li><a href="">Nous contacter</a></li>
             </ul>
-        </div>
+        </section>
     </footer>
 </body>
 

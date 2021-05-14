@@ -35,7 +35,6 @@ img {
     max-width: 100%;
 }
 
-/* Titres */
 h2, h3 {
     font-weight: 600;
 }
@@ -83,6 +82,7 @@ aside.fiveStars::before {
 /* Survol des cartes */
 .card:hover {
     cursor: pointer;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.600);
 }
 
 .card:hover h3 {
@@ -180,8 +180,9 @@ nav ul li:hover > a {
     }   
 }
 
-/*---------------------------------------------- ↑ Header ↑ -------------------------------------------------*/
-/*---------------------------------------------- ↓ Recherche ↓ ----------------------------------------------*/
+/*---------------------------------------------- ↑ Header ↑ ---------------------------------------------------*/
+/*-------------------------------------------- ↓ Section Recherche ↓ ------------------------------------------*/
+/*---------------------------------------------- ↓ Barre de Recherche ↓ ---------------------------------------*/
 
 #searchSection {
     padding: 20px;
@@ -210,7 +211,7 @@ nav ul li:hover > a {
     border-bottom-left-radius: 10px;
 }
 
-.searchInput {
+.searchBar input {
     width: calc(100% - 100px); /* 100% moins taille des deux éléments qui l'entourent */
     padding: 1em;
     border: 2px solid #f2f2f2;
@@ -218,7 +219,7 @@ nav ul li:hover > a {
     font-weight: 600;
 }
 
-.searchButton {
+.searchBar button {
     width: 50px;
     border: none;
     border-top-right-radius: 10px;
@@ -230,12 +231,12 @@ nav ul li:hover > a {
     font-weight: 600;
 }
 
-.searchButton:hover {
+.searchBar button:hover {
     background-color: #0065fcec;
 }
 
-.searchButton span {
-    display: none; /* On enlève l'affichage du mot "rechercher" pour les petites dimensions */
+.searchBar button span {
+    display: none; 
 }
 
 @media all and (min-width: 768px) {
@@ -244,7 +245,7 @@ nav ul li:hover > a {
         padding: 0;
     }
 
-    .searchInput {
+    .searchBar input {
         width: calc(100% - 182px);
         padding: 1em;
         border: 2px solid #f2f2f2;
@@ -252,89 +253,108 @@ nav ul li:hover > a {
         font-weight: 600;
     }
     
-    .searchButton {
+    .searchBar button {
         width: 132px;
         padding-left: 15px;
         padding-right: 15px;
     }
 
-    .searchButton .icon {
-        display: none; /* On enlève l'affichage de l'icone loupe */
+    .searchBar button .icon {
+        display: none; /* On enlève l'icone loupe... */
     }
 
-    .searchButton span {
-        display: inherit; /* On retire le display: none du mot "Rechercher" */
+    .searchBar button span {
+        display: inline; /* ...On la remplace par le mot "Rechercher" */
     }
 }
 
-/* Section Filtres */
-.filterSection {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    font-weight: 600;
-}
+/*---------------------------------------------- ↑ Barre de Recherche ↑ -------------------------------------*/
+/*---------------------------------------------- ↓ Filtres ↓ ----------------------------------------------- */
 
-.filterSection__title {
+#filtersSection h4 {
     font-size: 16px;
     width: 100%;
+    margin-bottom: 1rem;
 }
 
-/* Filtres */
-.filter {
-    height: 50px;
-    display: flex;
+#filtersSection button {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    display: inline-flex;
     align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    height: 50px;
+    padding-right: 1rem;
     border: 3px solid #f2f2f2;
     border-radius: 25px;
-    cursor: pointer;
+    cursor: pointer;  
+    background-color: transparent;  
 }
 
-.filter:hover {
+#filtersSection button::before {
+    position: relative;
+    right: 3px;
+    content: "";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    background-color: #deebff;
+    color: #0065FC;
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+}
+
+#filtersSection button:first-of-type::before {
+    content: "\f53a";
+}
+
+#filtersSection button:nth-of-type(2)::before {
+    content: "\f1ae";
+}
+
+#filtersSection button:nth-of-type(3)::before {
+    content: "\f004";
+}
+
+#filtersSection button:nth-of-type(4)::before {
+    content: "\f6d3";
+}
+
+#filtersSection button:hover {
     background-color: #deebff;
     border-color: #deebff;
     color: #0065FC;
 }
 
-.filter__icon {
-    position: relative;
-    right: 3px; /* Je décale le cercle pour qu'il se superpose à la bordure de la div*/
-    height: 50px;
-    width: 50px;
+#filtersSection p {
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    background-color: #deebff;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+#filtersSection p::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    content: "\f129";
     color: #0065FC;
-}
-
-.filter__name {
-    padding: 0 15px 0 5px;
-}
-
-/* Filtres info */
-.filterSection__info {
-    width: 100%;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-.infoIcon {
-    position: relative;
-    bottom: 5px;
-    height: 27px;
-    width: 27px;
-    margin-right: 1em;
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
     border: 3px solid #f2f2f2;
-    border-radius: 50%;
-    font-size: 0.8em;
-    color: #0065FC;
 }
+
+/*---------------------------------------------- ↑ Filtres ↑ ---------------------------------------------- */
 
 @media all and (min-width: 768px) {
 
@@ -344,10 +364,10 @@ nav ul li:hover > a {
     }
 }
 
-/*-------------------------------------------- ↑ Recherche ↑ ------------------------------------------------*/
+/*-------------------------------------------- ↑ Section Recherche ↑ ----------------------------------------*/
 /*-------------------------------------------- ↓ Les plus populaires ↓ ------------------------------------- */
 
-aside.icon::before {
+#mostPopularSection h2::before {
     position: absolute;
     top: 36px;
     right: 20px;
@@ -363,7 +383,7 @@ aside.icon::before {
 }
 
 #mostPopularSection .card {
-    height: 145px;
+    height: auto;
     box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.200);
     border-radius: 1rem;
     margin-bottom: 20px;
@@ -371,18 +391,16 @@ aside.icon::before {
     padding: 5px;
     display: grid;
     grid-template-areas: "img h3"
-                        "img p"
-                        "img ."
-                        "img aside";
+                         "img p"
+                         "img ."
+                         "img aside";
     grid-template-columns: 40% 60%;
-    cursor: pointer;
 }
 
 #mostPopularSection .card img {
-    border-top-left-radius: 0.9rem;
-    border-bottom-left-radius: 0.9rem;
+    border-radius: 0.9rem 0 0 0.9rem;
     width: 100%;
-    height: 135px;
+    height: 145px;
     object-fit: cover;
     grid-area: img;
 }
@@ -403,47 +421,98 @@ aside.icon::before {
 }
 
 @media all and (min-width: 768px) {
-    
-    aside.icon::before {
-        top: 36px;
-        right: 36px;
-    }
-    
+        
     #mostPopularSection {
         padding: 36px;
+        border-radius: 1.2rem;
+    }
+
+    #mostPopularSection h2::before {
+        right: 36px;
     }
 
     #mostPopularSection .card {
         margin-bottom: 36px;
     }
+
+    #mostPopularSection article:last-of-type {
+        margin-bottom: 0px;
+    }
 }
 
 /*------------------------------------------ ↑ Les plus populaires ↑ --------------------------------------- */
-/*------------------------------------------ ↓ Hébergements ↓ ---------------------------------------------- */
+/* ----------------------------------------- ↓ Hébergements ↓ ------------------------------------------------*/
 
 #accommodationsSection {
     padding: 36px 20px;
 }
 
-#searchResultsSection {
-    display: flex;
-    flex-direction: column;
+#accommodationsSection .card {
+    height: 205px;
+    padding: 5px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.200);
 }
 
-.cardsWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
+#accommodationsSection img {
+    border-radius: 0.9rem 0.9rem 0 0;
+    width: 100%;
+    height: 115px;
+    object-fit: cover;
+}
+
+#accommodationsSection .card h3 {
+    padding: 0.3rem 1rem 0.3rem 1rem;
+}
+
+#accommodationsSection .card p {
+    padding-left: 1rem;
+}
+
+#accommodationsSection .card .stars {
+    padding: 0.3rem 1rem 0.5rem 1rem;
 }
 
 .seeMore {
+    cursor: pointer;
+    width: 100%;
     margin-top: 25px;
     font-weight: 600;
 }
 
+.seeMore:hover {
+    color: #0065FC;
+}
+
+@media all and (min-width: 768px) {
+
+    #accommodationsSection {
+        border-radius: 1.2rem;
+        background-color: #f2f2f2;
+        padding: 36px;
+    }
+
+    #accommodationsSection .card {
+        max-width: 280px;
+        margin-bottom: 0;
+    }
+
+    #accommodationsSection .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 36px;
+    }    
+}
+
+/*----------------------------------------------- ↑ Hébergements ↑ -----------------------------------------------*/
+/*---------------------- ↓ Comportement Responsive des sections hébergement et populaire ↓ ----------------- */
+
 @media all and (min-width: 768px) {
     #searchResultsSection {
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         column-gap: 36px;
@@ -452,20 +521,16 @@ aside.icon::before {
     }
 
     #mostPopularSection {
-        border-radius: 1.2rem;
         order: 2;
         flex: 1;
     }
 
     #accommodationsSection {
-        padding: 36px;
-        border-radius: 1.2rem;
         flex: 1;
-        background-color: #f2f2f2;
     }
 }
 
-@media all and (min-width: 1200px) {
+@media all and (min-width: 1024px) {
     #mostPopularSection {
         flex: 1.5;
     }
@@ -474,62 +539,8 @@ aside.icon::before {
         flex: 3;
     }
 }
-/* ----------------------------------------- ↓ Hébergements ↓ ------------------------------------------------*/
 
-#accommodationsSection .card {
-    display: flex;
-    padding: 5px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.200);
-}
-
-#accommodationsSection .card__thumb {
-    flex: 1.5;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    overflow: hidden;
-}
-
-#accommodationsSection .card__thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#accommodationsSection .card__label {
-    padding: 15px 15px 15px 20px;
-    display: flex;
-    flex: 2;
-    flex-direction: column;
-}
-
-#accommodationsSection .card {
-    height: 220px;
-    display: flex;
-    flex-direction: column;
-}
-
-#accommodationsSection .card__thumb {
-    flex: 2;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 0px;
-}
-
-#accommodationsSection .card__label {
-    flex: 1;
-    padding: 5px 10px;
-    justify-content: space-evenly;
-}
-
-@media all and (min-width: 768px) {
-
-    #accommodationsSection .card {
-        max-width: 300px;
-    }
-}
-
-/*----------------------------------------------- ↑ Hébergements ↑ -----------------------------------------------*/
+/*---------------------- ↑ Comportement Responsive des sections hébergement et populaire ↑ ----------------- */
 /*----------------------------------------------- ↓ Activités ↓ -----------------------------------------------*/
 
 #activitiesSection {
@@ -554,16 +565,18 @@ aside.icon::before {
 }
 
 #activitiesSection h3 {
+    position: relative;
+    bottom: 3px;
     height: 55px;
     display: flex;
     align-items: center;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
 }
 
 @media all and (min-width: 768px) {
 
     #activitiesSection {
-        padding: 36px 0px;
+        padding: 36px 0p;
         order: 3;
         display: grid;
         grid-column-gap: 43px;
@@ -611,6 +624,7 @@ aside.icon::before {
     #activitiesSection {
         order: 3;
         display: grid;
+        margin-bottom: 36px;
         grid-column-gap: 43px;
         grid-template-areas: "titre titre titre titre"
                              "activité1 activité2 activité4 activité5"
@@ -640,7 +654,7 @@ footer {
     padding: 50px;
 }
 
-footer div {
+footer section {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -663,5 +677,4 @@ footer ul li a:hover {
         justify-content: space-around;
     }
 }
-
 
