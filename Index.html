@@ -16,12 +16,10 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <a href=""><img src="/Ressources/images/logo/Reservia.svg" alt="logo"></a>
-                <li class="subscribe"><a href="">S'inscrire</a></li>
-                <li class="accommodationsLink"><a href="#accommodationsSection">Hébergements</a></li>
-                <li class="activitiesLink"><a href="#activitiesSection">Activités</a></li>
-            </ul>
+            <img src="/Ressources/images/logo/Reservia.svg" alt="logo">
+            <a class="nav-subscribe" href="">S'inscrire</a>
+            <a class="nav-accommodations" href="#accommodationsSection">Hébergements</a>
+            <a class="nav-activities"href="#activitiesSection">Activités</a>
         </nav>
     </header>
 
@@ -30,10 +28,9 @@
             <h2>Trouvez votre hébergement pour des vacances de rêve</h2>
             <p>En plein centre ville ou en pleine nature</p>
             <div class="searchBar">
-                <div class="iconDiv"><i class="icon fas fa-map-marker-alt"></i></div>
+                <aside class="icon"></aside>
                 <input type="text" placeholder="Ville, Pays...">
                 <button type="submit">
-                    <i class="icon fas fa-search"></i>
                     <span>Rechercher</span>
                 </button>
             </div>
@@ -48,7 +45,7 @@
             </section>
         </section>
 
-        <article id="searchResultsSection">           
+        <section id="searchResultsSection">           
             <aside id="mostPopularSection">
                 <h2>Les plus populaires</h2>
                 <article class="card" onclick="">
@@ -141,11 +138,8 @@
                     <h3>Parc Longchamp</h3>
                 </article>
             </section>
-        </article>
+        </section>
     </main>
-
-</section>
-
 
     <footer>
         <section>
