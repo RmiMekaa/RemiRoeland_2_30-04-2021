@@ -100,6 +100,7 @@ aside.fiveStars::before {
 /*--------------------------------------------- ↓ Header ↓ ---------------------------------------------------*/
 
 nav {
+    padding-top: 1rem;
     margin-bottom: 1rem;
     display: grid;
     grid-template-areas: "logo subscribe"
@@ -139,6 +140,7 @@ nav img {
     }
 
     nav {
+        padding-top: 0;
         display: flex;
         justify-content: flex-end;
     }
@@ -330,7 +332,7 @@ nav img {
 
 #filtersSection button:hover {
     background-color: #deebff;
-    border-color: #deebff;
+    border: none;
     color: #0065FC;
 }
 
