@@ -17,7 +17,7 @@ html {
 body {
     position: relative; /* Pour le positionnement du logo sur les très grande résolutions */
     font-family: "Raleway";
-    max-width: 1980px;
+    max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -40,7 +40,7 @@ h2, h3 {
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 1.35rem;
     margin-bottom: 25px;
 }
 
@@ -135,7 +135,7 @@ nav img {
     nav img {
         position: absolute;
         left: 30px;
-        top: 1.5rem;
+        top: 2rem;
     }
 
     nav {
@@ -144,7 +144,7 @@ nav img {
     }
 
     nav a {
-        padding: 2rem 3rem;
+        padding: 3rem 3rem;
         border-top: 3px solid transparent;
         border-bottom: none;
     }
@@ -273,8 +273,7 @@ nav img {
 /*---------------------------------------------- ↓ Filtres ↓ ----------------------------------------------- */
 
 #filtersSection h4 {
-    font-size: 16px;
-    width: 100%;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
 }
 
@@ -283,10 +282,10 @@ nav img {
     margin-bottom: 1rem;
     display: inline-flex;
     align-items: center;
-    font-size: 16px;
+    font-size: 1.1rem;
     font-weight: bold;
     height: 50px;
-    padding-right: 1rem;
+    padding-right: 1.2rem;
     border: 3px solid #f2f2f2;
     border-radius: 25px;
     cursor: pointer;  
@@ -360,6 +359,11 @@ nav img {
         margin-left: 50px;
         margin-right: 50px;
     }
+
+    #filtersSection h4 {
+        display: inline;
+        margin-right: 1rem;
+    }
 }
 
 /*-------------------------------------------- ↑ Section Recherche ↑ ----------------------------------------*/
@@ -426,7 +430,7 @@ nav img {
     }
 
     #mostPopularSection .card {
-        margin-bottom: 36px;
+        margin-bottom: 30px;
     }
 
     #mostPopularSection article:last-of-type {
@@ -485,7 +489,6 @@ nav img {
     }
 
     #accommodationsSection .card {
-        max-width: 300px;
         margin-bottom: 0;
     }
 
@@ -493,9 +496,19 @@ nav img {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        gap: 36px;
+        gap: 30px;
     }    
 }
+
+@media all and (min-width: 1280px) {
+
+    #accommodationsSection .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+}
+
 
 /*----------------------------------------------- ↑ Hébergements ↑ -----------------------------------------------*/
 /*---------------------- ↓ Comportement Responsive des sections hébergement et populaire ↓ ----------------- */
@@ -505,7 +518,7 @@ nav img {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        column-gap: 36px;
+        column-gap: 30px;
         margin-left: 50px;
         margin-right: 50px;
     }
@@ -520,13 +533,10 @@ nav img {
     }
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 1280px) {
     #mostPopularSection {
-        flex: 1.5;
-    }
-
-    #accommodationsSection {
-        flex: 3;
+        width: 420px;
+        flex: inherit;
     }
 }
 
@@ -566,12 +576,17 @@ nav img {
         padding: 36px 0;
         order: 3;
         display: grid;
-        grid-column-gap: 43px;
+        grid-column-gap: 36px;
         grid-template-areas: "titre titre"
                              "activité1 activité2"
                              "activité3 activité4"
                              "activité5 activité6";
     }
+
+    #activitiesSection .card {
+        overflow: hidden;
+        margin-bottom: 36px;
+    }    
 
     #activitiesSection h2 {
         grid-area: titre;
@@ -606,7 +621,7 @@ nav img {
     }
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 1280px) {
 
     #activitiesSection {
         order: 3;
@@ -661,6 +676,7 @@ footer ul li a:hover {
 
     footer {
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        padding-right: 25%;
     }
 }
