@@ -12,7 +12,7 @@ html {
 body {
     position: relative;
     /* Pour le positionnement du logo sur les très grande résolutions */
-    font-family: Raleway, sans-serif;
+    font-family: "Raleway", sans-serif;
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
@@ -64,7 +64,7 @@ h3 {
 
 /* Étoiles */
 aside.stars {
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 5 Free", sans-serif;
     font-weight: bold;
 }
 
@@ -206,7 +206,7 @@ nav img {
 }
 
 .searchBar ::before {
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 5 Free", sans-serif;
     font-weight: bold;
 }
 
@@ -303,7 +303,7 @@ nav img {
 
 #filtersSection ::before {
     color: #0065FC;
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 5 Free", sans-serif;
     font-weight: bold;
     border-radius: 50%;
     display: flex;
@@ -382,7 +382,8 @@ nav img {
     position: absolute;
     top: 36px;
     right: 20px;
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 5 Free", sans-serif;
+
     font-weight: bold;
     content: "\f201";
 }
