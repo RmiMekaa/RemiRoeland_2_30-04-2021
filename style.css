@@ -63,36 +63,37 @@ h3 {
 }
 
 /* Étoiles */
-aside.stars {
+.stars {
     font-family: "Font Awesome 5 Free", sans-serif;
     font-weight: bold;
+    font-style: normal;
 }
 
-aside.stars::before {
+.stars::before {
     color: #0065FC;
 }
 
-aside.stars::after {
+.stars::after {
     color: #d9d9d9;
 }
 
-aside.threeStars::before {
+.threeStars::before {
     content: "\f005\f005\f005";
 }
 
-aside.threeStars::after {
+.threeStars::after {
     content: "\f005\f005";
 }
 
-aside.fourStars::before {
+.fourStars::before {
     content: "\f005\f005\f005\f005";
 }
 
-aside.fourStars::after {
+.fourStars::after {
     content: "\f005";
 }
 
-aside.fiveStars::before {
+.fiveStars::before {
     content: "\f005\f005\f005\f005\f005";
 }
 
