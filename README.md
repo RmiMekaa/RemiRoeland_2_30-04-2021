@@ -7,6 +7,11 @@
  - Developp a responsive web page according to these models : [desktop](https://github.com/RmiMekaa/RemiRoeland_2_30-04-2021/blob/master/Ressources/Desktop%20-%201.png) | [Mobile](https://github.com/RmiMekaa/RemiRoeland_2_30-04-2021/blob/master/Ressources/iPhone%208%20-%201.png)
  - Learn Github repository management
 
+## Features
+ - Hover effects
+ - Anchor links
+ - Responsive design
+
  -----
 
  <p float="left">
