@@ -1,8 +1,3 @@
-/*@font-face {
-    font-family: "Raleway";
-    src: url(Ressources/fonts/Raleway-VariableFont_wght.ttf);
-}*/
-
 /* ------------------------------------------ ↓ Règles générales ↓ -----------------------------------------*/
 * {
     padding: 0;
@@ -15,8 +10,9 @@ html {
 }
 
 body {
-    position: relative; /* Pour le positionnement du logo sur les très grande résolutions */
-    font-family: "Raleway";
+    position: relative;
+    /* Pour le positionnement du logo sur les très grande résolutions */
+    font-family: Raleway, sans-serif;
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
@@ -35,7 +31,8 @@ img {
     max-width: 100%;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-weight: bold;
 }
 
@@ -68,32 +65,35 @@ h3 {
 /* Étoiles */
 aside.stars {
     font-family: "Font Awesome 5 Free";
-    font-weight:bold;
+    font-weight: bold;
 }
 
-aside.stars::before  {
-    color:#0065FC;
+aside.stars::before {
+    color: #0065FC;
 }
+
 aside.stars::after {
     color: #d9d9d9;
 }
+
 aside.threeStars::before {
-    content:"\f005\f005\f005";
+    content: "\f005\f005\f005";
 }
 
 aside.threeStars::after {
-    content:"\f005\f005";
+    content: "\f005\f005";
 }
 
 aside.fourStars::before {
-    content:"\f005\f005\f005\f005";
+    content: "\f005\f005\f005\f005";
 }
+
 aside.fourStars::after {
-    content:"\f005";
+    content: "\f005";
 }
 
 aside.fiveStars::before {
-    content:"\f005\f005\f005\f005\f005";
+    content: "\f005\f005\f005\f005\f005";
 }
 
 /*--------------------------------------------- ↑ Règles Générales ↑ -----------------------------------------*/
@@ -104,7 +104,7 @@ nav {
     margin-bottom: 1rem;
     display: grid;
     grid-template-areas: "logo subscribe"
-                         "accommodations activities";
+        "accommodations activities";
 }
 
 nav a {
@@ -123,11 +123,13 @@ nav img {
     text-align: right;
 }
 
-.nav-accommodations, .nav-activities {
+.nav-accommodations,
+.nav-activities {
     border-bottom: 3px solid #f2f2f2;
 }
 
-.nav-accommodations:hover, .nav-activities:hover {
+.nav-accommodations:hover,
+.nav-activities:hover {
     color: #0065FC;
     border-bottom: 3px solid #0065FC;
 }
@@ -160,11 +162,13 @@ nav img {
         border-top: 3px solid #0065FC;
     }
 
-    .nav-accommodations, .nav-activities {
+    .nav-accommodations,
+    .nav-activities {
         border-bottom: none;
     }
 
-    .nav-accommodations:hover, .nav-activities:hover {
+    .nav-accommodations:hover,
+    .nav-activities:hover {
         border-bottom: none;
         border-top: 3px solid #0065FC;
     }
@@ -203,15 +207,16 @@ nav img {
 
 .searchBar ::before {
     font-family: "Font Awesome 5 Free";
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 .searchBar .icon::before {
-    content:"\f3c5";
+    content: "\f3c5";
 }
 
 .searchBar input {
-    width: calc(100% - 100px); /* 100% moins taille des deux éléments qui l'entourent */
+    width: calc(100% - 100px);
+    /* 100% moins taille des deux éléments qui l'entourent */
     padding: 1em;
     border: 2px solid #f2f2f2;
     font-size: 16px;
@@ -231,7 +236,7 @@ nav img {
 }
 
 .searchBar button::before {
-    content:"\f002";
+    content: "\f002";
 }
 
 .searchBar button:hover {
@@ -239,7 +244,7 @@ nav img {
 }
 
 .searchBar button span {
-    display: none; 
+    display: none;
 }
 
 @media all and (min-width: 768px) {
@@ -255,7 +260,7 @@ nav img {
         font-size: 16px;
         font-weight: bold;
     }
-    
+
     .searchBar button {
         width: 132px;
         padding-left: 15px;
@@ -263,11 +268,13 @@ nav img {
     }
 
     .searchBar button::before {
-        display: none; /* On enlève l'icone loupe... */
+        display: none;
+        /* On enlève l'icone loupe... */
     }
 
     .searchBar button span {
-        display: inline; /* ...On la remplace par le mot "Rechercher" */
+        display: inline;
+        /* ...On la remplace par le mot "Rechercher" */
     }
 }
 
@@ -290,8 +297,8 @@ nav img {
     padding-right: 1.2rem;
     border: 3px solid #f2f2f2;
     border-radius: 25px;
-    cursor: pointer;  
-    background-color: transparent;  
+    cursor: pointer;
+    background-color: transparent;
 }
 
 #filtersSection ::before {
@@ -392,9 +399,9 @@ nav img {
     padding: 5px;
     display: grid;
     grid-template-areas: "img h3"
-                         "img p"
-                         "img ."
-                         "img aside";
+        "img p"
+        "img ."
+        "img aside";
     grid-template-columns: 40% 60%;
     column-gap: 0.75rem;
 }
@@ -423,7 +430,7 @@ nav img {
 }
 
 @media all and (min-width: 768px) {
-        
+
     #mostPopularSection {
         padding: 36px;
         border-radius: 1.2rem;
@@ -506,7 +513,7 @@ nav img {
         flex-wrap: wrap;
         justify-content: space-evenly;
         gap: 30px;
-    }    
+    }
 }
 
 @media all and (min-width: 1280px) {
@@ -587,15 +594,15 @@ nav img {
         display: grid;
         grid-column-gap: 36px;
         grid-template-areas: "titre titre"
-                             "activité1 activité2"
-                             "activité3 activité4"
-                             "activité5 activité6";
+            "activité1 activité2"
+            "activité3 activité4"
+            "activité5 activité6";
     }
 
     #activitiesSection .card {
         overflow: hidden;
         margin-bottom: 36px;
-    }    
+    }
 
     #activitiesSection h2 {
         grid-area: titre;
@@ -638,10 +645,10 @@ nav img {
         margin-bottom: 36px;
         grid-column-gap: 43px;
         grid-template-areas: "titre titre titre titre"
-                             "activité1 activité2 activité4 activité5"
-                             "activité1 activité2 activité4     .    "
-                             "activité1     .     activité4 activité6"
-                             "activité1 activité3 activité4 activité6";
+            "activité1 activité2 activité4 activité5"
+            "activité1 activité2 activité4     .    "
+            "activité1     .     activité4 activité6"
+            "activité1 activité3 activité4 activité6";
         grid-template-rows: auto 180px 43px 43px 180px;
     }
 
