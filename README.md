@@ -11,7 +11,7 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=RmiMekaa_RemiRoeland_2_30-04-2021&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=RmiMekaa_RemiRoeland_2_30-04-2021)
 
 ## Project objectives
- - Developp a responsive web page according to these models : [desktop](https://github.com/RmiMekaa/RemiRoeland_2_30-04-2021/blob/master/Ressources/Desktop%20-%201.png) | [Mobile](https://github.com/RmiMekaa/RemiRoeland_2_30-04-2021/blob/master/Ressources/iPhone%208%20-%201.png)
+ - Develop a responsive web page according to these models : [desktop](https://github.com/RmiMekaa/RemiRoeland_2_30-04-2021/blob/master/Ressources/Desktop%20-%201.png) | [Mobile](https://github.com/RmiMekaa/RemiRoeland_2_30-04-2021/blob/master/Ressources/iPhone%208%20-%201.png)
  - Learn Github repository management
 
 ## Features
